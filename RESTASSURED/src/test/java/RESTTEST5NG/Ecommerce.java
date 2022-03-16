@@ -10,13 +10,13 @@ public class Ecommerce {
     public static String baseurl = "https://ecommerceservice.herokuapp.com";
     public static String message;
 	public static String accessToken;
-	@Test(priority = 0)
+	@Test(priority = 0, enabled = false)
 	public void signup()
 	{
 		RestAssured.baseURI = baseurl;
 		
 	String 	requestbody = "{\n"
-			+ "	\"email\": \"rajesh008990@gmail.com\",\n"
+			+ "	\"email\": \"rajesh${=String.valueOf(Math.random()*1000).substring(0,5)}@gmail.com\",\n"
 			+ "	\"password\": \"krishna@123\"\n"
 			+ "}";
 	
